@@ -51,6 +51,9 @@
     if (options && options.onProgress)
       loadingTask.onProgress = options.onProgress;
 
+    if (options && options.withCredentials)
+      loadingTask.withCredentials = options.withCredentials;
+
     return loadingTask;
   }
 
