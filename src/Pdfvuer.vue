@@ -87,6 +87,10 @@
         type: Boolean,
         default: false,
       },
+      renderInteractiveForms: {
+        type: Boolean,
+        default: false,
+      },
       text: {
         type: Boolean,
         default: true,
@@ -182,6 +186,7 @@
             eventBus: eventBus,
             textLayerFactory: textLayer,
             annotationLayerFactory: annotationLayer,
+            renderInteractiveForms: self.renderInteractiveForms ? self.renderInteractiveForms : false,
           });
           self.loading = false;
           self.$emit('loading', false);
