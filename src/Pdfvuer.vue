@@ -10,21 +10,21 @@
 <script>
   'use strict';
 
-  var pdfjsLib = require('pdfjs-dist/build/pdf');
+  var pdfjsLib = require('pdfjs-dist/es5/build/pdf');
   if (process.env.VUE_ENV !== 'server') {
     if (typeof window !== 'undefined' && 'Worker' in window) {
-      var PdfjsWorker = require('worker-loader!pdfjs-dist/build/pdf.worker.js');
+      var PdfjsWorker = require('worker-loader!pdfjs-dist/es5/build/pdf.worker.js');
       // pdfjsLib.GlobalWorkerOptions.workerPort = new PdfjsWorker();
     }
   }
-  import 'pdfjs-dist/build/pdf.worker.entry'
+  import 'pdfjs-dist/es5/build/pdf.worker.entry'
   import {
     DefaultAnnotationLayerFactory,
     DefaultTextLayerFactory,
     PDFLinkService,
     PDFPageView,
     EventBus
-  } from 'pdfjs-dist/web/pdf_viewer.js';
+  } from 'pdfjs-dist/es5/web/pdf_viewer.js';
   import resizeSensor from 'vue-resize-sensor'
 
   function isPDFDocumentLoadingTask(obj) {
